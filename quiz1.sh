@@ -1,10 +1,14 @@
 echo "user: $USER"
 echo "name: Yutong Ji"
 
-gunzip -c dictionary.gz | grep -v "[^muocatf]" | grep "a" | grep -E "[muocatf].{2}[muocatf]" | wc
+gunzip -c ../MCB185/data/dictionary.gz | grep -v "[^muocatf]" | grep "a" | grep -E "[muocatf].{2}[muocatf]" | wc
 
-gunzip -c dictionary.gz | grep -v "[^taibrnl]" | grep "b" | grep -E "[taibrnl]].{2}[taibrnl]" | wc
+gunzip -c ../MCB185/data/dictionary.gz | grep -v "[^taibrnl]" | grep "b" | grep -E "[taibrnl].{2}[taibrnl]" | wc
 
-gunzip -c dictionary.gz | grep -v "[^maocdin]" | grep "c" | grep -E "[maocdin].{2}[maocdin]" | wc
+gunzip -c ../MCB185/data/dictionary.gz | grep -v "[^maocdin]" | grep "c" | grep -E "[maocdin].{2}[maocdin]" | wc
 
-gunzip -c dictionary.gz | grep -v "[^anozigr]" | grep "z" | grep -E "[anozigr].{2}[anozigr]" | wc
+gunzip -c ../MCB185/data/dictionary.gz | grep -v "[^anozigr]" | grep "z" | grep -E "[anozigr].{2}[anozigr]" | wc
+
+gunzip -c ../MCB185/data/jaspar2024_core.transfac.gz | sort | uniq -c | sort -n | grep -v "^#" | grep "tax_group"
+
+echo "Co-author: Akshat, Roger"
