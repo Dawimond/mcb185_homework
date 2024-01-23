@@ -9,6 +9,6 @@ gunzip -c ../MCB185/data/dictionary.gz | grep -v "[^maocdin]" | grep "c" | grep 
 
 gunzip -c ../MCB185/data/dictionary.gz | grep -v "[^anozigr]" | grep "z" | grep -E "[anozigr].{2}[anozigr]" | wc
 
-gunzip -c ../MCB185/data/jaspar2024_core.transfac.gz | sort | uniq -c | sort -n | grep -v "^#" | grep "tax_group"
+gunzip -c ../MCB185/data/jaspar2024_core.transfac.gz | uniq -c | grep tax | cut -d ":" -f -2 | sort -n
 
 echo "Co-author: Akshat, Roger"
