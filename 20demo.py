@@ -1,6 +1,8 @@
 # 20demo.py by Yutong Ji
+
 import math
 import sys
+
 def heya():
 	print('hello Mantodea :)')
 # yea so basically don't use sys.exit for now unless in specific situations
@@ -13,7 +15,7 @@ print(x)
 def neg_to_pos(n):
 	assert(n < 0)
 	return abs(n)
-print(neg_to_pos(-9))
+print(neg_to_pos(9))
 s = 'hello world'
 print(s, type(s))
 a = 0.3
