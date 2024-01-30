@@ -17,7 +17,8 @@ def entropy(a, c, g, t):
 	pc = c / tnt
 	pg = g / tnt
 	pt = t / tnt
-	H = -(pa * math.log2(pa) + pc * math.log2(pc) + pg * math.log2(pg) + pt * math.log2(pt))
+	H = -(pa * math.log2(pa) + pc * math.log2(pc) + \
+	pg * math.log2(pg) + pt * math.log2(pt))
 	return H
 
 print("Example 1: Shanoon Entropy of C in AATGCCTG")

@@ -4,7 +4,8 @@ import math
 
 def acc_and_f1(TP, FP, TN, FN): 
 	acc = (TP + TN) / (TP + FN + TN + FP)
-	f1 = (2*(TP / (TP + FP))*(TP / (TP + FN))) / ((TP / (TP + FP)) + (TP / (TP + FN)))
+	f1 = (2*(TP / (TP + FP))*(TP / (TP + FN))) / \
+	((TP / (TP + FP)) + (TP / (TP + FN)))
 	return acc, f1
 
 print("Example 1: TP = 120, FP = 70, TN = 40, FN = 170")

@@ -2,7 +2,7 @@
 
 import sys
 
-def aaletter(x):
+def AminoAcidletter(x):
 	if x == "I": return 4.5
 	if x == "V": return 4.2
 	if x == "L": return 3.8
@@ -25,11 +25,11 @@ def aaletter(x):
 	if x == "R": return -4.5
 	sys.exit("ERROR! Unknown Amino Acid!")
 
-print("Example 1: Proline (P)")
+print("Example 1: Proline(P)")
 print("Hydrophobicity = ", aaletter("P"))
 
-print("Example 2: Leucine (L)")
+print("Example 2: Leucine(L)")
 print("Hydrophobicity = ", aaletter("L"))
 
-print("Example 3: Unknown (Z)")
+print("Example 3: Unknown(Z)")
 print("Hydrophobicity = ", aaletter("Z"))
