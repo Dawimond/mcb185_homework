@@ -35,7 +35,7 @@ for i in range(0, limit):
 def gc_comp(seq):
 	gc_count = 0
 	total = 0
-	or nt in seq:
+	for nt in seq:
 		if nt == 'C' or nt == 'G':
 			gc_count = gc_count + 1
 		total = total + 1
