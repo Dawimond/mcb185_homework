@@ -18,5 +18,5 @@ print(nchoosek(25, 5))
 print('Example 2: 100 choose 77')
 print(nchoosek(100, 77))
 
-print('Example 1: 1 choose 1')
+print('Example 3: 1 choose 1')
 print(nchoosek(1, 1))
