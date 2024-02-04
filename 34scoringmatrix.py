@@ -2,7 +2,13 @@
 
 nts = 'ACGT'
 
-print('   A  C  G  T')
+print(end = ' ')
+for nt1 in nts: 
+	print(end = '  ')
+	for nt2 in nts: 
+	 	if nt1 == nt2:
+	 		print(nt2, end = '')
+print()
 for nt1 in nts: 
 	print(nt1, end = ' ')
 	for nt2 in nts: 
