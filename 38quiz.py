@@ -1,19 +1,14 @@
 # By Yutong Ji, co-authors: Roger, Natalia
 
-def gregory_pi(k, pi, sign):
-	for k in range(0, 100): 
-		if k % 2 == 0: sign = 1
-		else:          sign = -1
-		pi = pi + (sign / (2*k + 1))
-	return pi * 4
+pi = 1
+sign = -1
+for n in range(1, 101, 2): 
+	pi = pi + (sign * (1/(n + 2)))
+	print(n, sign, 4*pi)
+	sign = -sign
 
-print('pi = ', gregory_pi(100, 0, 1))
-
-def nilakantha_pi(k, pi, sign):
-	for k in range(0, 100): 
-		if k % 2 == 0: sign = 4
-		else:          sign = -4
-		pi = pi + (sign / ((2 * k + 3)**3 - (2 * k + 3)))
-	return pi
-
-print('pi = ', nilakantha_pi(100, 3, 1))
+pi_n = 3
+for k in range(0, 101): 
+	if k % 2 == 0: sign_n = 4
+	else:          sign_n = -4
+	pi_n = pi_n + (sign_n / ((2 * k + 3)**3 - (2 * k + 3)))
