@@ -1,4 +1,4 @@
-# co-authors: Roger, Natalia
+# By Yutong Ji, co-authors: Roger, Natalia
 
 def gregory_pi(k, pi, sign):
 	for k in range(0, 100): 
