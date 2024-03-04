@@ -5,13 +5,13 @@ import mcb185
 import dogma
 
 def hydrophobicity(seq):
-    aas = 'IVLFCMAGTSWYPHEQDNKR'
-    kds = [4.5, 4.2, 3.8, 2.8, 2.5, 1.9, 1.8, -0.4, -0.7, -0.8, -0.9, -1.3, -1.6, -3.2, -3.5, -3.5, -3.5, -3.5, -3.9, -4.5]
-    kds_vals = []
-    for aa in seq: 
-    	if aa not in aas: kds_vals.append(0.0)
-    	else:             kds_vals.append(kds[aas.index(aa)])
-    return kds_vals
+	aas = 'IVLFCMAGTSWYPHEQDNKR'
+	kds = [4.5, 4.2, 3.8, 2.8, 2.5, 1.9, 1.8, -0.4, -0.7, -0.8, -0.9, -1.3, -1.6, -3.2, -3.5, -3.5, -3.5, -3.5, -3.9, -4.5]
+	kds_vals = []
+	for aa in seq: 
+		if aa not in aas: kds_vals.append(0.0)
+		else:             kds_vals.append(kds[aas.index(aa)])
+	return kds_vals
 
 def summing(kds_vals):
 	tot = 0
