@@ -15,7 +15,7 @@ def dtc(P, Q):
 		dis += abs(p - q)
 	return dis
 
-mindis = 99999
+mindis = 999
 closest_color = None
 
 with open(fl) as fp:

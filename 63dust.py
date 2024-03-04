@@ -4,27 +4,47 @@ import sys
 import math
 import mcb185
 
-fl = sys.argv[1]
 w = int(sys.argv[2])
-h = sys.argv[3]
+h_lim = float(sys.argv[3])
 
-def entropy(seq):
-	a = seq.count('A')
-	c = seq.count('C')
-	g = seq.count('G')
-	t = seq.count('T')
-	tnt = a + c + g + t
-	pa = a / tnt
-	pc = c / tnt
-	pg = g / tnt
-	pt = t / tnt
-	h = -(pa * math.log2(pa) + pc * math.log2(pc) + pg * math.log2(pg) + pt * math.log2(pt))
+def entropy(a, c, g, t):
+	non_zero = []
+	for ct in [a, c, g, t]:
+		if ct > 0: non_zero.append(ct)
+	tnt = 0
+	for ct in non_zero:
+		tnt += ct
+	probs = []
+	for ct in non_zero: probs.append(ct / tnt)
+	h = 0
+	for p in probs:
+		h -= p * math.log2(p)
 	return h
 
-def 
+def mask(seq, beg, end):
+	for i in range(beg, end):
+		seq[i] = 'N'
 
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	for i in range(len(seq) -w +1):
-		s = seq[i:i+w]
-		if entropy(s) < 1.4
-		
+	print(defline)
+	masked = list(seq)
+	a = seq[:w].count('A')
+	c = seq[:w].count('C')
+	g = seq[:w].count('G')
+	t = seq[:w].count('T')
+	h = entropy(a, c, g, t)
+	if h < h_lim: 
+		mask(masked, -w, 0)
+	for i in range(w, len(seq)):
+		if seq[i - w] == "A": a -= 1
+		if seq[i - w] == "C": c -= 1
+		if seq[i - w] == "G": g -= 1
+		else:                 t -= 1
+		if seq[i] == "A":     a += 1
+		if seq[i] == "C":     c += 1
+		if seq[i] == "G":     g += 1
+		else:                 t += 1
+		h = entropy(a, c, g, t)
+		if h < h_lim:
+			mask(masked, i - w, i)
+	print(''.join(masked))
