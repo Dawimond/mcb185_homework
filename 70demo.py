@@ -1,3 +1,5 @@
+# 70demo.py by Yutong Ji
+
 d = {}
 d = dict()
 d = {'dog': 'woof', 'cat': 'meow'}
@@ -20,14 +22,14 @@ kdtable = {
 }
 
 def kd_dict(seq):
-    kd = 0
-    for aa in seq: kd += kdtable[aa]
-    return kd/len(seq)
+	kd = 0
+	for aa in seq: kd += kdtable[aa]
+	return kd/len(seq)
 
 count = {}
 for nt in seq:
-    if nt not in count: count[nt] = 0
-    count[nt] += 1
+	if nt not in count: count[nt] = 0
+	count[nt] += 1
     
 # Sorting
 for k in sorted(count): print(k, count[k])

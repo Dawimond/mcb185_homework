@@ -1,10 +1,6 @@
 import dogma
+import sys
+import mcb185
 
-print(dogma.transcribe('ACGT'))
-print(dogma.revcomp('AAAACGT'))
-
-print(dogma.translate('ATGTAA'))
-
-s = 'ACGTGGGGGGCATATG'
-print(dogma.gc_comp(s))
-print(dogma.gc_skew(s), dogma.gc_skew(dogma.revcomp(s)))
+for defline, seq in mcb185.read_fasta(sys.argv[1]):
+	print(seq[336])
