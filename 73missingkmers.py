@@ -25,7 +25,7 @@ for k in range(1, 10):
 				continue
 			else:
 				print(kmer, 0)
-				counts += 1
-	if counts != 0:
+				zero_counts += 1
+	if zero_counts != 0:
 		print('k = ' k, counts)
 		break

@@ -13,6 +13,18 @@ def revcomp(dna):
 		else: rc.append('N')
 	return ''.join(rc)
 
+kdh = {
+	'I':  4.5, 'V':  4.2, 'L':  3.8, 'F':  2.8, 'C':  2.5,
+	'M':  1.9, 'A':  1.8, 'G': -0.4, 'T': -0.7, 'S': -0.8,
+	'W': -0.9, 'Y': -1.3, 'P': -1.6, 'H': -3.2, 'E': -3.5,
+	'Q': -3.5, 'D': -3.5, 'K': -3.9, 'N': -3.5, 'R': -4.5,
+}
+def hydropathy(seq):
+	s = 0
+	for aa in seq:
+		s += kdh[aa]
+	return s / len(seq)
+	
 gcodes = {
 	'AAA' : 'K',	'AAC' : 'N',	'AAG' : 'K',	'AAT' : 'N',
 	'ACA' : 'T',	'ACC' : 'T',	'ACG' : 'T',	'ACT' : 'T',
@@ -39,6 +51,17 @@ def translate(seq):
 		else:              aa = 'X'
 		prots.append(aa)
 	return ''.join(prots)
+
+def tm(seq):
+	a = seq.count('A')
+	c = seq.count('C')
+	g = seq.count('G')
+	t = seq.count('T')
+	if  a + c + g + t <= 13: 
+		Tm = (a + t) * 2 + (g + c) * 4
+	else: 
+		Tm = 64.9 + 41 * (g + c - 16.4) / (a + t + g + c)
+	return Tm
 
 def gc_comp(seq):
 	return (seq.count('C') + seq.count('G')) / len(seq)
