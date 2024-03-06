@@ -29,6 +29,6 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	for k, v in coordinations.items():
 		print(k, v)
 	for k, v in coordinations.items():
-		k = len(seq) - k - 1
-		v = len(seq) - v - 1
-		print(k, v)
+		kminus = len(seq) - k - 1
+		vminus= len(seq) - v - 1
+		print(kminus, vminus)
