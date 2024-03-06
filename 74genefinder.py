@@ -25,10 +25,12 @@ def gene_finder(seq):
 	return coords
 
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	coordinations = gene_finder(seq)
-	for k, v in coordinations.items():
-		print(k, v)
-	for k, v in coordinations.items():
+	rev = mcb185.anti_seq(seq)
+	coordinationsplus = gene_finder(seq)
+	coordinationsminus = gene_finder(rev)
+	for k, v in coordinationsplus.items():
+		print(k, v, '+')
+	for k, v in coordinationsminus.items():
 		kminus = len(seq) - k - 1
 		vminus = len(seq) - v - 1
-		print(kminus, vminus)
+		print(vminus, kminus, '-')

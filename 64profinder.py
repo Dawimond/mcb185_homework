@@ -23,5 +23,5 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	for prot in revcompstr:
 		ogstrand.append(prot)
 	for i, prot in enumerate(ogstrand):
-		print(f'>{defline[:11]}-prot-{i}')
+		print(f'>{defline[:11]}-prot-{i + 1}')
 		print(f'{prot}*')
