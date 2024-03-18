@@ -34,4 +34,4 @@ with gzip.open(arg.vcf, 'rt') as fp:
 			if loc >= rng['st'] and loc <= rng['stp'] and rng['tp'] not in tps:
 				tps.append(rng['tp'])
 		if tps:
-			print(f'{ch}\t{loc}\t{','.join(tps)}')
+			print(f"{ch}\t{loc}\t{','.join(tps)}")
