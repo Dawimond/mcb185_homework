@@ -2,7 +2,6 @@
 
 import gzip
 import sys
-import json
 import mcb185
 
 with gzip.open(sys.argv[1], 'rt') as fp:

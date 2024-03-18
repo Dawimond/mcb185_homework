@@ -2,7 +2,6 @@
 
 import gzip
 import sys
-import json
 import mcb185
 
 def pwm_list(pwm, ac, id, site):
