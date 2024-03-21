@@ -8,7 +8,6 @@ parser = argparse.ArgumentParser(description='variant reporter')
 parser.add_argument('gff', type=str, help='GFF file')
 parser.add_argument('vcf', type=str, help='VCF file')
 arg = parser.parse_args()
-print('comparing', arg.gff, arg.vcf)
 
 tp_ranges = {}
 with gzip.open(arg.gff, 'rt') as fp:

@@ -34,17 +34,17 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	t = seq[:w].count('T')
 	h = entropy(a, c, g, t)
 	if h < h_lim: 
-		mask(masked, -w, 0)
+		mask(masked, 0, w)
 	for i in range(w, len(seq)):
 		if seq[i - w] == "A": a -= 1
-		if seq[i - w] == "C": c -= 1
-		if seq[i - w] == "G": g -= 1
+		elif seq[i - w] == "C": c -= 1
+		elif seq[i - w] == "G": g -= 1
 		else:                 t -= 1
 		if seq[i] == "A":     a += 1
-		if seq[i] == "C":     c += 1
-		if seq[i] == "G":     g += 1
+		elif seq[i] == "C":     c += 1
+		elif seq[i] == "G":     g += 1
 		else:                 t += 1
 		h = entropy(a, c, g, t)
 		if h < h_lim:
-			mask(masked, i - w, i)
+			mask(masked, i - w + 1, i + 1)
 	print(''.join(masked))

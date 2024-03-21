@@ -35,7 +35,6 @@ with gzip.open(sys.argv[2], 'rt') as fp:
 		strd = ln[6]
 		if tp != 'intron': continue
 		introns.append((ch, strt, stp, strd))
-	print(introns)
 
 don =[]
 acc = []
